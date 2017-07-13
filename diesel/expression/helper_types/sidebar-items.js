@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Asc",""],["Desc",""],["IsNotNull",""],["IsNull",""]],"type":[["And",""],["AsExpr",""],["AsExprOf",""],["Between",""],["Eq",""],["EqAny",""],["Gt",""],["GtEq",""],["Like",""],["Lt",""],["LtEq",""],["Not","The return type of `not(expr)`"],["NotBetween",""],["NotEq",""],["NotLike",""],["SqlTypeOf",""]]});

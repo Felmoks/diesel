@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `prelude` mod in crate `diesel`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, prelude">
+
+    <title>diesel::prelude - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module prelude</p><div class="block items"><ul><li><a href="#reexports">Reexports</a></li><li><a href="#traits">Traits</a></li></ul></div><p class='location'><a href='../index.html'>diesel</a></p><script>window.sidebarCurrent = {name: 'prelude', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>diesel</a>::<wbr><a class="mod" href=''>prelude</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/diesel/lib.rs.html#115-126' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Re-exports important traits and types. Meant to be glob imported when using Diesel.</p>
+</div><h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+<table><tr><td><code>pub use associations::<a class="trait" href="../../diesel/associations/trait.Identifiable.html" title="trait diesel::associations::Identifiable">Identifiable</a>;</code></td></tr><tr><td><code>pub use connection::<a class="trait" href="../../diesel/connection/trait.Connection.html" title="trait diesel::connection::Connection">Connection</a>;</code></td></tr><tr><td><code>pub use expression::<a class="trait" href="../../diesel/expression/trait.Expression.html" title="trait diesel::expression::Expression">Expression</a>;</code></td></tr><tr><td><code>pub use expression::<a class="trait" href="../../diesel/expression/trait.SelectableExpression.html" title="trait diesel::expression::SelectableExpression">SelectableExpression</a>;</code></td></tr><tr><td><code>pub use expression::<a class="trait" href="../../diesel/expression/trait.AppearsOnTable.html" title="trait diesel::expression::AppearsOnTable">AppearsOnTable</a>;</code></td></tr><tr><td><code>pub use expression::<a class="trait" href="../../diesel/expression/trait.BoxableExpression.html" title="trait diesel::expression::BoxableExpression">BoxableExpression</a>;</code></td></tr><tr><td><code>pub use <a class="mod" href="../../diesel/expression_methods/index.html" title="mod diesel::expression_methods">expression_methods</a>::*;</code></td></tr><tr><td><code>pub use query_source::QuerySource;</code></td></tr><tr><td><code>pub use query_source::<a class="trait" href="../../diesel/query_source/trait.Queryable.html" title="trait diesel::query_source::Queryable">Queryable</a>;</code></td></tr><tr><td><code>pub use query_source::<a class="trait" href="../../diesel/query_source/trait.Table.html" title="trait diesel::query_source::Table">Table</a>;</code></td></tr><tr><td><code>pub use query_source::<a class="trait" href="../../diesel/query_source/trait.Column.html" title="trait diesel::query_source::Column">Column</a>;</code></td></tr><tr><td><code>pub use result::<a class="type" href="../../diesel/result/type.QueryResult.html" title="type diesel::result::QueryResult">QueryResult</a>;</code></td></tr><tr><td><code>pub use result::<a class="enum" href="../../diesel/result/enum.ConnectionError.html" title="enum diesel::result::ConnectionError">ConnectionError</a>;</code></td></tr><tr><td><code>pub use result::<a class="type" href="../../diesel/result/type.ConnectionResult.html" title="type diesel::result::ConnectionResult">ConnectionResult</a>;</code></td></tr><tr><td><code>pub use result::<a class="trait" href="../../diesel/result/trait.OptionalExtension.html" title="trait diesel::result::OptionalExtension">OptionalExtension</a>;</code></td></tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.BelongingToDsl.html"
+                                  title='trait diesel::prelude::BelongingToDsl'>BelongingToDsl</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.BoxedDsl.html"
+                                  title='trait diesel::prelude::BoxedDsl'>BoxedDsl</a></td>
+                           <td class='docblock-short'>
+                                <p>Boxes the pieces of a query into a single type. This is useful for cases
+where you want to conditionally modify a query, but need the type to remain
+the same. The backend must be specified as part of this. It is not possible
+to box a query and have it be useable on multiple backends.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.CountDsl.html"
+                                  title='trait diesel::prelude::CountDsl'>CountDsl</a></td>
+                           <td class='docblock-short'>
+                                <p>Adds a simple <code>count</code> function to queries. Automatically implemented for all
+types which implement <code>SelectDsl</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.DistinctDsl.html"
+                                  title='trait diesel::prelude::DistinctDsl'>DistinctDsl</a></td>
+                           <td class='docblock-short'>
+                                <p>Adds the <code>DISTINCT</code> keyword to a query.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ExecuteDsl.html"
+                                  title='trait diesel::prelude::ExecuteDsl'>ExecuteDsl</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.FilterDsl.html"
+                                  title='trait diesel::prelude::FilterDsl'>FilterDsl</a></td>
+                           <td class='docblock-short'>
+                                <p>Adds to the <code>WHERE</code> clause of a query. If there is already a <code>WHERE</code> clause,
+the result will be <code>old AND new</code>. This is automatically implemented for the
+various query builder types.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.FindDsl.html"
+                                  title='trait diesel::prelude::FindDsl'>FindDsl</a></td>
+                           <td class='docblock-short'>
+                                <p>Attempts to find a single record from the given table by primary key.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.FirstDsl.html"
+                                  title='trait diesel::prelude::FirstDsl'>FirstDsl</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.GroupedBy.html"
+                                  title='trait diesel::prelude::GroupedBy'>GroupedBy</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Insertable.html"
+                                  title='trait diesel::prelude::Insertable'>Insertable</a></td>
+                           <td class='docblock-short'>
+                                <p>Represents that a structure can be used to to insert a new row into the
+database. This is automatically implemented for <code>&amp;[T]</code> and <code>&amp;Vec&lt;T&gt;</code> for
+inserting more than one record.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.JoinDsl.html"
+                                  title='trait diesel::prelude::JoinDsl'>JoinDsl</a></td>
+                           <td class='docblock-short'>
+                                <p>Methods allowing various joins between two or more tables.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.JoinTo.html"
+                                  title='trait diesel::prelude::JoinTo'>JoinTo</a></td>
+                           <td class='docblock-short'>
+                                <p>Indicates that two tables can be used together in a JOIN clause.
+Implementations of this trait will be generated for you automatically by
+the <a href="../associations/index.html">association annotations</a> from codegen.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.LimitDsl.html"
+                                  title='trait diesel::prelude::LimitDsl'>LimitDsl</a></td>
+                           <td class='docblock-short'>
+                                <p>Sets the limit clause of a query. If there was already a limit clause, it
+will be overridden. This is automatically implemented for the various query
+builder types.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.LoadDsl.html"
+                                  title='trait diesel::prelude::LoadDsl'>LoadDsl</a></td>
+                           <td class='docblock-short'>
+                                <p>Methods to execute a query given a connection. These are automatically implemented for the
+various query types.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.LoadQuery.html"
+                                  title='trait diesel::prelude::LoadQuery'>LoadQuery</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.OffsetDsl.html"
+                                  title='trait diesel::prelude::OffsetDsl'>OffsetDsl</a></td>
+                           <td class='docblock-short'>
+                                <p>Sets the offset clause of a query. If there was already a offset clause, it
+will be overridden. This is automatically implemented for the various query
+builder types.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.OrderDsl.html"
+                                  title='trait diesel::prelude::OrderDsl'>OrderDsl</a></td>
+                           <td class='docblock-short'>
+                                <p>Sets the order clause of a query. If there was already a order clause, it
+will be overridden. The expression passed to <code>order</code> must actually be valid
+for the query. See also:
+<a href="../expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html#method.desc"><code>.desc()</code></a>
+and <a href="../expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html#method.asc"><code>.asc()</code></a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.SaveChangesDsl.html"
+                                  title='trait diesel::prelude::SaveChangesDsl'>SaveChangesDsl</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.SelectDsl.html"
+                                  title='trait diesel::prelude::SelectDsl'>SelectDsl</a></td>
+                           <td class='docblock-short'>
+                                <p>Sets the select clause of a query. If there was already a select clause, it
+will be overridden. The expression passed to <code>select</code> must actually be valid
+for the query (only contains columns from the target table, doesn&#39;t mix
+aggregate + non-aggregate expressions, etc).</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "diesel";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
